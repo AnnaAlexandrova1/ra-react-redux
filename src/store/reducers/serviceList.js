@@ -18,7 +18,7 @@ export default function serviceListReducer(state = initial_state, action) {
                 }
             ]
         case actions.SUBMIT_CHANGE_TASK:
-            return state.map((service) => service.id === action.payload.id ?  {...service, title: action.payload.title, price: action.payload.title } : service)
+            return state.map((service) => service.id === action.payload.id ?  {...service, title: action.payload.title, price: action.payload.price } : service)
     
         case actions.REMOVE_TASK:
             return state.filter(task => action.payload.id !== task.id)     

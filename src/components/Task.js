@@ -9,12 +9,12 @@ const Task = ({ task }) => {
   const dispatch = useDispatch();
 
   const handleEdit = (title, price, id ) => {
-    
+    dispatch(actions.handleTask(title, price, id))
   } 
 
   return (
    <ul className="list-group list-group-horizontal">
-      <li className="list-group-item" style={{ minWidth: "20%" }}>
+      <li className="list-group-item" style={{ minWidth: "85%" }}>
         {title}
       </li>
       <li className="list-group-item" style={{ minWidth: "10%" }}>
@@ -23,7 +23,7 @@ const Task = ({ task }) => {
           <li className="list-group-item"
         onClick={
           () => 
-          console.log(id)
+            handleEdit(title, price, id)
           }>
         <FontAwesomeIcon icon={faPenToSquare} />
       </li>

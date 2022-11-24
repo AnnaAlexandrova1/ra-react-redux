@@ -11,7 +11,7 @@ export const removeTask = id => ({
     payload: { id }
 })
 
-export const changeTack = (name, value, id) => ({
+export const changeTask = (name, value, id) => ({
     type: actions.CHANGE_TASK,
     payload: {name, value, id}
 })
@@ -21,16 +21,11 @@ export const submitChangeTask = (title, price, id) => ({
     payload: {title, price, id}
 })
 
-// export const resetTask = () => ({
-//     type: actions.RESET_TASK,
-// })
+export const handleTask = (title, price, id) => ({
+    type: actions.HANDLE_TASK,
+    payload: {title, price, id}
+})
 
-// export const changeEditable = (id) => ({
-//     type: actions.CHANGE_EDITEBLE,
-//     payload: {id}
-// })
-
-// export const handleTask = (name, value) => ({
-//     type: actions.HANDLE_TASK,
-//     payload: {name, value}
-// })
+export const resetEdit = () => ({
+    type: actions.RESET_EDIT,
+})

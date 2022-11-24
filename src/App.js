@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import AddNewTask from './components/AddNewTask'
 import TaskList from './components/TaskList';
@@ -10,9 +10,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 function App() {
 
   const tasks = useSelector(state => state.serviceList)
-  console.log(tasks)
   return (
-    <Container className="main-app-container">
+    <Container className="main-app-container"
+    style={{marginTop:'50px'}}>
        <Row className="mb-4">
         <Col className="mt-4">
           <AddNewTask />
