@@ -1,12 +1,16 @@
 import { ListGroup, Form } from "react-bootstrap";
-import { useDispatch } from "react-redux";
-import { addTask, removeTask, editTask } from "../store/actions";
+import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
+import * as actions from "../store/actions";
 
 const Task = ({ task }) => {
-  const { id, title, price, completed } = task;
+  const { id, title, price } = task;
   const dispatch = useDispatch();
+
+  const handleEdit = (title, price, id ) => {
+    
+  } 
 
   return (
    <ul className="list-group list-group-horizontal">
@@ -17,12 +21,14 @@ const Task = ({ task }) => {
         {price}
       </li>
           <li className="list-group-item"
-          onClick={()=> dispatch(editTask(id)
-          )}>
+        onClick={
+          () => 
+          console.log(id)
+          }>
         <FontAwesomeIcon icon={faPenToSquare} />
       </li>
           <li className="list-group-item"
-          onClick={()=> dispatch(removeTask(id)
+          onClick={()=> dispatch(actions.removeTask(id)
           )}>
         <FontAwesomeIcon icon={faTrash} />
       </li>

@@ -1,27 +1,24 @@
+import React from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../store/actions";
 
 const AddNewTask = () => {
-    const [taskTitle, setTaskTitle] = useState('');
-    const [price, setPrice] = useState('')
-    const dispatch = useDispatch();
+  const {fields, edit} = useSelector((state) => state.serviceEditList);
+  const dispatch = useDispatch();
 
-  const handleTaskChange = (e) => {
-    setTaskTitle(e.target.value);
-  };
-  
-    const handlePriceChange = (e) => {
-    setPrice(e.target.value)
-}
+  const handleTaskSubmit = (e) => {
+    e.preventDefault();
+    if (edit.isEdit) {
+      dispatch(actions.submitChangeTask());
+    } else {
+      dispatch(actions.addTask(fields.title, fields.price))
+    }
     
-    const handleTashSubmit = (e) => {
-      e.preventDefault()
-      console.log(taskTitle, price)
-      dispatch(actions.addTask({ title: taskTitle, price: price}));
-      setTaskTitle("");
-      setPrice('')
-      
+  };
+  const handleChange = (e) => {
+    const {name, value} = e.target
+    dispatch(actions.changeTack(name, value))
   };
 
   return (
@@ -35,12 +32,12 @@ const AddNewTask = () => {
           className="form-control"
           id="inputPassword2"
           placeholder="Наименование"
-          value={taskTitle}
-                  onChange={(e) => {
-                       handleTaskChange(e)
-                  }
-           
-          }
+          name='title'
+          value={fields.title}
+          onChange={(e) => {
+            handleChange(e);
+          }}
+          
         />
       </div>
       <div className="col-12">
@@ -49,16 +46,20 @@ const AddNewTask = () => {
           className="form-control"
           id="inputPassword2"
           placeholder="Цена"
-          value={price}
+          name='price'
+          value={fields.price}
           onChange={(e) => {
-            handlePriceChange(e);
+            handleChange(e);
           }}
+          
         />
       </div>
-       <div className="col-12">
-              <button type="submit" className="btn btn-primary"
-              onClick={e => handleTashSubmit(e)}>Отправить</button>
-       </div>
+      <div className="col-12">
+        <button type="submit" className="btn btn-primary"
+        onClick={(e) => handleTaskSubmit(e)}>
+          Отправить
+        </button>
+      </div>
     </form>
   );
 };

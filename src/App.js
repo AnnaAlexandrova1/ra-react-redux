@@ -9,7 +9,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 function App() {
 
-  const tasks = useSelector(state => state)
+  const tasks = useSelector(state => state.serviceList)
   console.log(tasks)
   return (
     <Container className="main-app-container">

@@ -1,8 +1,12 @@
-import { createStore } from "redux";
-import reducer from "./reducer";
+import { configureStore } from "@reduxjs/toolkit";
+import serviceEditListReducer from "./reducers/serviceEditList";
+import serviceListReducer from "./reducers/serviceList";
 
-const store = createStore(
-    reducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = configureStore({
+  reducer: {
+        serviceList: serviceListReducer,
+        serviceEditList: serviceEditListReducer,
+  }
+})
 
 export default store;

@@ -1,5 +1,4 @@
 import Task from "./Task";
-import { ListGroup } from "react-bootstrap";
 
 const TaskList = ({ tasks }) => {
   if (tasks.length) {
