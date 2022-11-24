@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ra-less7-task1/static/css/main.431d3778.css",
-    "main.js": "/ra-less7-task1/static/js/main.bc0e0d84.js",
-    "static/js/787.deefd580.chunk.js": "/ra-less7-task1/static/js/787.deefd580.chunk.js",
-    "index.html": "/ra-less7-task1/index.html",
-    "main.431d3778.css.map": "/ra-less7-task1/static/css/main.431d3778.css.map",
-    "main.bc0e0d84.js.map": "/ra-less7-task1/static/js/main.bc0e0d84.js.map",
-    "787.deefd580.chunk.js.map": "/ra-less7-task1/static/js/787.deefd580.chunk.js.map"
+    "main.css": "/ra-react-redux/static/css/main.431d3778.css",
+    "main.js": "/ra-react-redux/static/js/main.c0ae2022.js",
+    "static/js/787.deefd580.chunk.js": "/ra-react-redux/static/js/787.deefd580.chunk.js",
+    "index.html": "/ra-react-redux/index.html",
+    "main.431d3778.css.map": "/ra-react-redux/static/css/main.431d3778.css.map",
+    "main.c0ae2022.js.map": "/ra-react-redux/static/js/main.c0ae2022.js.map",
+    "787.deefd580.chunk.js.map": "/ra-react-redux/static/js/787.deefd580.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.431d3778.css",
-    "static/js/main.bc0e0d84.js"
+    "static/js/main.c0ae2022.js"
   ]
 }
